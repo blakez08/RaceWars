@@ -1,24 +1,60 @@
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider
-} from '@react-navigation/native'
+import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons'
 import { Tabs } from 'expo-router'
 import React from 'react'
-import { useColorScheme } from 'react-native'
 
 const TabLayout = () => {
-  const colorScheme = useColorScheme()
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Tabs>
-        <Tabs.Screen name="index" options={{ title: 'Home' }} />
-        <Tabs.Screen name="race" options={{ title: 'Race' }} />
-        <Tabs.Screen name="podium" options={{ title: 'Podium' }} />
-        <Tabs.Screen name="runs" options={{ title: 'Runs' }} />
-        <Tabs.Screen name="garage" options={{ title: 'Garage' }} />
-      </Tabs>
-    </ThemeProvider>
+    <Tabs>
+      <Tabs.Screen
+        name="index"
+        options={{
+          title: 'Home',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="home" color={color} size={size} />
+          )
+        }}
+      />
+      <Tabs.Screen
+        name="race"
+        options={{
+          title: 'Race',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons
+              name="car-traction-control"
+              color={color}
+              size={size}
+            />
+          )
+        }}
+      />
+      <Tabs.Screen
+        name="podium"
+        options={{
+          title: 'Podium',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="podium" color={color} size={size} />
+          )
+        }}
+      />
+      <Tabs.Screen
+        name="runs"
+        options={{
+          title: 'Runs',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="history" color={color} size={size} />
+          )
+        }}
+      />
+      <Tabs.Screen
+        name="garage"
+        options={{
+          title: 'Garage',
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons name="garage" color={color} size={size} />
+          )
+        }}
+      />
+    </Tabs>
   )
 }
 
