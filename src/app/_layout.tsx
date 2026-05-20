@@ -6,6 +6,7 @@ import {
 import { Stack } from 'expo-router'
 import React from 'react'
 import { useColorScheme } from 'react-native'
+import '../global.css'
 
 const getAuth = () => {
   return 'unauthed'
