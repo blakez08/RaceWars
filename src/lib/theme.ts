@@ -17,6 +17,7 @@ export const THEME = {
     accent: 'hsl(0 0% 96.1%)',
     accentForeground: 'hsl(0 0% 9%)',
     destructive: 'hsl(0 84.2% 60.2%)',
+    destructiveForeground: 'hsl(0 0% 98%)',
     border: 'hsl(0 0% 89.8%)',
     input: 'hsl(0 0% 89.8%)',
     ring: 'hsl(0 0% 63%)',
@@ -43,9 +44,10 @@ export const THEME = {
     accent: 'hsl(0 0% 14.9%)',
     accentForeground: 'hsl(0 0% 98%)',
     destructive: 'hsl(0 70.9% 59.4%)',
+    destructiveForeground: 'hsl(0 0% 98%)',
     border: 'hsl(0 0% 14.9%)',
     input: 'hsl(0 0% 14.9%)',
-    ring: 'hsl(300 0% 45%)',
+    ring: 'hsl(0 0% 45%)',
     radius: '0.625rem',
     chart1: 'hsl(220 70% 50%)',
     chart2: 'hsl(160 60% 45%)',
@@ -54,6 +56,8 @@ export const THEME = {
     chart5: 'hsl(340 75% 55%)'
   }
 }
+
+export const Colors = THEME
 
 export const NAV_THEME: Record<'light' | 'dark', Theme> = {
   light: {

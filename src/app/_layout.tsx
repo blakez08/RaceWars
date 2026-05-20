@@ -1,12 +1,9 @@
-import {
-  DarkTheme,
-  DefaultTheme,
-  ThemeProvider
-} from '@react-navigation/native'
+import '../global.css'
+import { ThemeProvider } from '@react-navigation/native'
 import { Stack } from 'expo-router'
 import React from 'react'
 import { useColorScheme } from 'react-native'
-import '../global.css'
+import { NAV_THEME } from '@/lib/theme'
 
 const getAuth = () => {
   return 'unauthed'
@@ -16,7 +13,7 @@ const Layout = () => {
   const status = getAuth()
   const colorScheme = useColorScheme()
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+    <ThemeProvider value={colorScheme === 'dark' ? NAV_THEME.dark : NAV_THEME.light}>
       <Stack>
         <Stack.Protected guard={status === 'authed'}>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
