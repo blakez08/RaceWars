@@ -2,9 +2,11 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Text } from '@/components/ui/text'
+import { useRouter } from 'expo-router'
 import { View } from 'react-native'
 
 const LoginScreen = () => {
+  const router = useRouter()
   return (
     <View className="bg-background h-full justify-center p-6 gap-6">
       <View>
@@ -26,7 +28,12 @@ const LoginScreen = () => {
           <Label nativeID="password-input" htmlFor="password-input">
             Password
           </Label>
-          <Text className="text-md">Forgot your password?</Text>
+          <Text
+            className="text-md"
+            onPress={() => router.navigate('/(auth)/forgot-password')}
+          >
+            Forgot your password?
+          </Text>
         </View>
         <Input id="password-input" placeholder="Password" secureTextEntry />
       </View>
@@ -36,7 +43,12 @@ const LoginScreen = () => {
       </Button>
 
       <View className="items-center">
-        <Text>Don't have an account? Sign up</Text>
+        <Text
+          className="text-md"
+          onPress={() => router.navigate('/(auth)/create-account')}
+        >
+          Don't have an account? Sign up
+        </Text>
       </View>
     </View>
   )
