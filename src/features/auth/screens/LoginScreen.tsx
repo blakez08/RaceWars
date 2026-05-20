@@ -4,16 +4,18 @@ import { Label } from '@/components/ui/label'
 import { Text } from '@/components/ui/text'
 import { useRouter } from 'expo-router'
 import { View } from 'react-native'
+import AuthHeader from '../components/AuthHeader'
+import AuthScreenContainer from '../components/AuthScreenContainer'
 
 const LoginScreen = () => {
   const router = useRouter()
   return (
-    <View className="bg-background h-full justify-center p-6 gap-6">
+    <AuthScreenContainer>
       <View>
-        <Text className="text-3xl font-bold">Welcome back</Text>
-        <Text className="text-sm text-muted-foreground">
-          Sign in to claim, defend, and compete.
-        </Text>
+        <AuthHeader
+          title="Welcome back"
+          subtitle="Sign in to claim, defend, and compete."
+        />
       </View>
 
       <View className="gap-1">
@@ -50,7 +52,7 @@ const LoginScreen = () => {
           Don't have an account? Sign up
         </Text>
       </View>
-    </View>
+    </AuthScreenContainer>
   )
 }
 
