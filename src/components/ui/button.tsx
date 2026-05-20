@@ -86,9 +86,9 @@ const buttonTextVariants = cva(
         )
       },
       size: {
-        default: '',
-        sm: '',
-        lg: '',
+        default: 'text-sm',
+        sm: 'text-md',
+        lg: 'text-lg',
         icon: ''
       }
     },
