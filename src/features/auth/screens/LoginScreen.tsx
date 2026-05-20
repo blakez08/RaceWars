@@ -6,9 +6,16 @@ import { useRouter } from 'expo-router'
 import { View } from 'react-native'
 import AuthHeader from '../components/AuthHeader'
 import AuthScreenContainer from '../components/AuthScreenContainer'
+import { useAuthStore } from '../stores/authStore'
 
 const LoginScreen = () => {
   const router = useRouter()
+  const login = useAuthStore().login
+
+  const handleLogin = () => {
+    login('blake@test.com', 'password')
+  }
+
   return (
     <AuthScreenContainer>
       <View>
@@ -40,7 +47,7 @@ const LoginScreen = () => {
         <Input id="password-input" placeholder="Password" secureTextEntry />
       </View>
 
-      <Button size="lg" onPress={() => {}}>
+      <Button size="lg" onPress={handleLogin}>
         <Text>Sign in</Text>
       </Button>
 

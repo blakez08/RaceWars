@@ -1,25 +1,25 @@
-import '../global.css'
+import { useAuthStore } from '@/features/auth/stores/authStore'
+import { NAV_THEME } from '@/lib/theme'
 import { ThemeProvider } from '@react-navigation/native'
 import { Stack } from 'expo-router'
 import React from 'react'
 import { useColorScheme } from 'react-native'
-import { NAV_THEME } from '@/lib/theme'
-
-const getAuth = () => {
-  return 'unauthed'
-}
+import '../global.css'
 
 const Layout = () => {
-  const status = getAuth()
+  const authStore = useAuthStore()
   const colorScheme = useColorScheme()
+
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? NAV_THEME.dark : NAV_THEME.light}>
+    <ThemeProvider
+      value={colorScheme === 'dark' ? NAV_THEME.dark : NAV_THEME.light}
+    >
       <Stack>
-        <Stack.Protected guard={status === 'authed'}>
+        <Stack.Protected guard={authStore.user !== null}>
           <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         </Stack.Protected>
 
-        <Stack.Protected guard={status === 'unauthed'}>
+        <Stack.Protected guard={authStore.user === null}>
           <Stack.Screen
             name="(auth)"
             options={{ headerShown: false, navigationBarHidden: true }}
