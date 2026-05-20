@@ -32,7 +32,7 @@ const ForgotPasswordScreen = () => {
 
       <View className="items-center">
         <Text className="text-md" onPress={() => router.navigate('/(auth)')}>
-          Return to login
+          Return to sign in
         </Text>
       </View>
     </AuthScreenContainer>
