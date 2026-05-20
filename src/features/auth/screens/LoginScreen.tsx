@@ -14,23 +14,30 @@ const LoginScreen = () => {
         </Text>
       </View>
 
-      <View>
+      <View className="gap-1">
         <Label nativeID="email-input" htmlFor="email-input">
           Email
         </Label>
         <Input id="email-input" placeholder="Email" />
       </View>
 
-      <View>
-        <Label nativeID="password-input" htmlFor="password-input">
-          Password
-        </Label>
+      <View className="gap-1">
+        <View className="flex-row justify-between">
+          <Label nativeID="password-input" htmlFor="password-input">
+            Password
+          </Label>
+          <Text className="text-md">Forgot your password?</Text>
+        </View>
         <Input id="password-input" placeholder="Password" secureTextEntry />
       </View>
 
       <Button size="lg" onPress={() => {}}>
         <Text>Sign in</Text>
       </Button>
+
+      <View className="items-center">
+        <Text>Don't have an account? Sign up</Text>
+      </View>
     </View>
   )
 }
