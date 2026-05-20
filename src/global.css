@@ -5,31 +5,31 @@
 @import 'nativewind/theme';
 
 :root {
-  --background: #ffffff;
-  --foreground: hsl(20 6% 10%);
-  --card: hsl(0 0% 100%);
-  --card-foreground: hsl(20 6% 10%);
-  --popover: hsl(0 0% 100%);
-  --popover-foreground: hsl(20 6% 10%);
-  --primary: #faf9f5;
-  --primary-foreground: hsl(0 0% 100%);
-  --secondary: hsl(60 5% 96%);
-  --secondary-foreground: hsl(20 6% 10%);
-  --muted: hsl(60 5% 96%);
-  --muted-foreground: hsl(25 5% 45%);
-  --accent: hsl(60 5% 96%);
-  --accent-foreground: hsl(20 6% 10%);
+  --background: #faf9f5;
+  --foreground: #30302e;
+  --card: #ffffff;
+  --card-foreground: #30302e;
+  --popover: #ffffff;
+  --popover-foreground: #30302e;
+  --primary: #30302e;
+  --primary-foreground: #faf9f5;
+  --secondary: #d85b31;
+  --secondary-foreground: #ffffff;
+  --muted: hsl(40 15% 92%);
+  --muted-foreground: hsl(28 10% 40%);
+  --accent: hsl(40 15% 92%);
+  --accent-foreground: #30302e;
   --destructive: hsl(0 60% 41%);
-  --destructive-foreground: hsl(0 0% 100%);
-  --border: hsl(20 6% 90%);
-  --input: hsl(20 6% 90%);
-  --ring: #faf9f5;
+  --destructive-foreground: #ffffff;
+  --border: hsl(40 10% 86%);
+  --input: hsl(40 10% 86%);
+  --ring: #30302e;
   --radius: 0.625rem;
-  --chart-1: #faf9f5;
-  --chart-2: hsl(210 68% 54%);
-  --chart-3: hsl(160 68% 37%);
-  --chart-4: hsl(36 87% 55%);
-  --chart-5: hsl(245 56% 67%);
+  --chart-1: #30302e;
+  --chart-2: hsl(210 68% 45%);
+  --chart-3: hsl(150 50% 40%);
+  --chart-4: hsl(36 87% 45%);
+  --chart-5: hsl(245 56% 55%);
 }
 
 @media (prefers-color-scheme: dark) {
