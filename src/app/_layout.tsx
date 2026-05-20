@@ -3,7 +3,6 @@ import {
   DefaultTheme,
   ThemeProvider
 } from '@react-navigation/native'
-import { PortalHost } from '@rn-primitives/portal'
 import { Stack } from 'expo-router'
 import React from 'react'
 import { useColorScheme } from 'react-native'
@@ -29,7 +28,6 @@ const Layout = () => {
             options={{ headerShown: false, navigationBarHidden: true }}
           />
         </Stack.Protected>
-        <PortalHost />
       </Stack>
     </ThemeProvider>
   )
