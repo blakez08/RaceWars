@@ -28,7 +28,7 @@ const LoginScreen = () => {
         <Input id="password-input" placeholder="Password" secureTextEntry />
       </View>
 
-      <Button onPress={() => {}}>
+      <Button size="lg" onPress={() => {}}>
         <Text>Sign in</Text>
       </Button>
     </View>
