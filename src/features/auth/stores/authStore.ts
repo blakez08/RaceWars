@@ -1,23 +1,8 @@
+import { AUTH_TOKEN_KEY } from '@/api/api'
+import * as SecureStore from 'expo-secure-store'
 import { create } from 'zustand'
+import authApi from '../api/authApi'
 import { User } from '../types'
-
-// Mock API call
-const apiLogin = async (email: string, password: string) => {
-  return new Promise<User>((resolve) => {
-    setTimeout(() => {
-      resolve({ id: '1', email: email })
-    }, 300)
-  })
-}
-
-// Mock API call
-const apiLogout = async () => {
-  return new Promise<void>((resolve) => {
-    setTimeout(() => {
-      resolve()
-    }, 300)
-  })
-}
 
 export const useAuthStore = create<{
   user: User | null
@@ -26,11 +11,13 @@ export const useAuthStore = create<{
 }>((set) => ({
   user: null,
   login: async (email: string, password: string) => {
-    const user = await apiLogin(email, password)
+    const { token } = await authApi.login(email, password)
+    await SecureStore.setItemAsync(AUTH_TOKEN_KEY, token)
+    const user = await authApi.getMe()
     set({ user })
   },
   logout: async () => {
-    await apiLogout()
+    await SecureStore.deleteItemAsync(AUTH_TOKEN_KEY)
     set({ user: null })
   }
 }))
